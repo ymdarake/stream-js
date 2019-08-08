@@ -1,16 +1,16 @@
 class Stream {
 
 	constructor(car, cdr) {
-		this.car = car;
-		this.cdr = cdr;// delayed
+		this._car = car;
+		this._cdr = cdr;// delayed
 	}
 
-	streamCar () {
-		return this.car;
+	car () {
+		return this._car;
 	}
 
-	streamCdr () {
-		return this.cdr();// force without memoise
+	cdr () {
+		return this._cdr();// force without memoise
 	}
 
 	filter (pred) {
@@ -18,10 +18,10 @@ class Stream {
 			if (stream === null)
 				return null;
 	
-			if (pred(stream.streamCar()))
-				return new Stream(stream.streamCar(), () => iter(stream.streamCdr()));
+			if (pred(stream.car()))
+				return new Stream(stream.car(), () => iter(stream.cdr()));
 
-			return iter(stream.streamCdr());
+			return iter(stream.cdr());
 		}
 		return iter(this);
 	}

@@ -2,7 +2,7 @@ class Stream {
 
 	constructor(car, cdr) {
 		this.car = car;
-		this.cdr = () => cdr;// delay
+		this.cdr = cdr;// delayed
 	}
 
 	// set cdr (value)...

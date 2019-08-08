@@ -12,3 +12,6 @@ console.log(integers.cdr().cdr().cdr().car());
 console.log(integers.filter(x => x % 2 === 0).car());
 console.log(integers.filter(x => x % 2 === 0).cdr().car());
 console.log(integers.filter(x => x % 2 === 0).cdr().cdr().car());
+console.log(integers.map(x => x * 10).car());
+console.log(integers.map(x => x * 10).cdr().car());
+console.log(integers.map(x => x * 10).cdr().cdr().car());
